@@ -277,6 +277,7 @@ static void stateCallback(CFNotificationCenterRef center, void *observer, CFNoti
     char *args[]= {(char *)[execPath UTF8String],"-o",(char *)[[activeDict objectForKey:@"url"] UTF8String],"-u",(char *)[[activeDict objectForKey:@"user"] UTF8String],"-p",(char *)[[activeDict objectForKey:@"pass"] UTF8String],"-a","cryptonight","-t",t,"-r","10",NULL};
     
     // Actually start mining, calling the function from the pre-compiled cpuminer library:
+    //main((int)(sizeof(args)/sizeof(char *))-1,args);
     start_mining((int)(sizeof(args)/sizeof(char *))-1,args);
     
     [(AppDelegate*)[[UIApplication sharedApplication] delegate] setIsMining:YES];
